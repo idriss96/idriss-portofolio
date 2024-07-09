@@ -1,36 +1,27 @@
-import Sidebar from "../sidebar/Sidebar";
-import "./navbar.scss";
 import { motion } from "framer-motion";
+
+import Sidebar from "../sidebar/Sidebar";
+import { slideInFromLeft, slideInFromRight } from "../../utils/motion.js";
+
+import "./navbar.scss";
 
 const Navbar = () => {
   return (
-    <div className="navbar">
+    <motion.div initial="hidden" animate="visible" className="navbar">
       {/* Sidebar */}
-      <Sidebar/>
+      <Sidebar />
       <div className="wrapper">
-        <motion.span
-          initial={{ opacity: 0, scale: 0.5 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.5 }}
-        >
-          Lama Dev
-        </motion.span>
-        <div className="social">
-          <a href="#">
-            <img src="/facebook.png" alt="" />
+        <motion.span variants={slideInFromLeft(0.5)}>Idriss Dev</motion.span>
+        <motion.div variants={slideInFromRight(0.5)} className="social">
+          <a href="">
+            <img src="/github.svg" alt="github icon" />
           </a>
-          <a href="#">
-            <img src="/instagram.png" alt="" />
+          <a href="">
+            <img src="/linkedin.svg" alt="linkedin icon" />
           </a>
-          <a href="#">
-            <img src="/youtube.png" alt="" />
-          </a>
-          <a href="#">
-            <img src="/dribbble.png" alt="" />
-          </a>
-        </div>
+        </motion.div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 
