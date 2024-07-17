@@ -9,7 +9,10 @@ const Sidebar = () => {
   const [open, setOpen] = useState(false);
 
   return (
-    <motion.div className="sidebar" animate={open ? "open" : "closed"}>
+    <motion.div
+      className={`${open ? "open" : "closed"} sidebar`}
+      animate={open ? "open" : "closed"}
+    >
       <motion.div className="bg" variants={animatedSidebar}>
         <Links />
       </motion.div>
