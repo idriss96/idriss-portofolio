@@ -102,7 +102,7 @@ export const backend_skill = [
 
 export const others_skill = [
   {
-    skill_name: "git.js",
+    skill_name: "git",
     Image: "/git.svg",
     width: 100,
     height: 100,

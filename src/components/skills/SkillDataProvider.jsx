@@ -26,7 +26,13 @@ const SkillDataProvider = ({ src, title, width, height, index }) => {
       className="data"
     >
       <p className="data-title">{title}</p>
-      <img src={src} width={width} height={height} alt="skill image" />
+      <img
+        className="data-icon"
+        src={src}
+        alt={title}
+        width={width}
+        height={height}
+      />
     </motion.div>
   );
 };
