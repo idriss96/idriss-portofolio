@@ -6,12 +6,15 @@
   margin: auto;
   display: flex;
   align-items: center;
+  position: relative;
   gap: 50px;
+  z-index: 10;
 
   @include mobile {
     width: 100%;
     padding: 10px;
     flex-direction: column;
+    gap: 0px;
   }
 
   .textContainer {
@@ -44,15 +47,14 @@
   .formContainer {
     flex: 1;
     position: relative;
-    
+
     @include mobile {
       padding: 50px;
       width: 100%;
     }
 
-
     .phoneSvg {
-      stroke: orange;
+      stroke: #8b5cf6;
       position: absolute;
       margin: auto;
       z-index: -1;
@@ -78,10 +80,15 @@
 
       button {
         padding: 20px;
-        border: none;
-        background-color: orange;
+        border-radius: 5px;
+        border: 1px solid transparent;
+        background-color: #8b5cf6;
+        color: white;
         cursor: pointer;
         font-weight: 500;
+        &:hover {
+          background-color: #7c3aed;
+        }
         @include mobile {
           padding: 10px;
         }

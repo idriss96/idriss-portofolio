@@ -8,7 +8,6 @@ import "./navbar.scss";
 const Navbar = () => {
   return (
     <motion.div initial="hidden" animate="visible" className="navbar">
-      {/* Sidebar */}
       <Sidebar />
       <div className="wrapper">
         <motion.span variants={slideInFromLeft(0.5)}>Idriss Dev</motion.span>

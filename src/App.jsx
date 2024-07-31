@@ -25,14 +25,17 @@ const App = () => {
       <section>
         <Skills />
       </section>
-      {/*  <section id="Portfolio">
+      {/* <section id="Portfolio">
         <Parallax type="portfolio" />
-      </section>
-      <Portfolio />
+      </section> */}
+      {/* <Portfolio /> */}
       <section id="Contact">
+        <Parallax type="Contact" />
+      </section>
+      <section>
         <Contact />
-      </section>  */}
-      {/* Framer Motion Crash Course */}
+      </section>
+
       {/* <Test/>
     <Test/> */}
     </div>

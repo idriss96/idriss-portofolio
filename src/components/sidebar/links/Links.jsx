@@ -2,8 +2,8 @@ import { motion } from "framer-motion";
 
 import { animatedLinks } from "../../../utils/motion.js";
 
-const Links = () => {
-  const items = ["Homepage", "Skills", "Projects", "Contact"];
+const Links = ({ setOpen }) => {
+  const items = ["Homepage", "Skills", "Contact"];
 
   return (
     <motion.div className="links" variants={animatedLinks.variants}>
@@ -14,6 +14,7 @@ const Links = () => {
           variants={animatedLinks.itemVariants}
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.95 }}
+          onClick={() => setOpen((prev) => !prev)}
         >
           {item}
         </motion.a>
