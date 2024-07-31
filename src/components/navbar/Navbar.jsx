@@ -12,10 +12,18 @@ const Navbar = () => {
       <div className="wrapper">
         <motion.span variants={slideInFromLeft(0.5)}>Idriss Dev</motion.span>
         <motion.div variants={slideInFromRight(0.5)} className="social">
-          <a href="">
+          <a
+            href="https://github.com/idriss96"
+            target="_blank"
+            rel="noreferrer"
+          >
             <img src="/github.svg" alt="github icon" />
           </a>
-          <a href="">
+          <a
+            href="https://www.linkedin.com/in/idriss-atik-a36248203/"
+            target="_blank"
+            rel="noreferrer"
+          >
             <img src="/linkedin.svg" alt="linkedin icon" />
           </a>
         </motion.div>
