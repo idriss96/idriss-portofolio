@@ -1,7 +1,9 @@
 import { useRef, useState } from "react";
-import "./contact.scss";
 import { motion, useInView } from "framer-motion";
 import emailjs from "@emailjs/browser";
+import { useTranslation } from "react-i18next";
+
+import "./contact.scss";
 
 const variants = {
   initial: {
@@ -25,6 +27,8 @@ const Contact = () => {
   const [success, setSuccess] = useState(false);
 
   const isInView = useInView(ref, { margin: "-100px" });
+
+  const { t } = useTranslation();
 
   const sendEmail = (e) => {
     e.preventDefault();
@@ -55,17 +59,17 @@ const Contact = () => {
       whileInView="animate"
     >
       <motion.div className="textContainer" variants={variants}>
-        <motion.h1 variants={variants}>Let’s work together</motion.h1>
+        <motion.h1 variants={variants}>{t("contact-title")}</motion.h1>
         <motion.div className="item" variants={variants}>
-          <h2>Mail</h2>
+          <h2>{t("contact-mail")}</h2>
           <span>idrissatik1996@gmail.com</span>
         </motion.div>
         <motion.div className="item" variants={variants}>
-          <h2>Address</h2>
-          <span>Spain, Valencia</span>
+          <h2>{t("contact-address")}</h2>
+          <span>{t("contact-address-text")}</span>
         </motion.div>
         <motion.div className="item" variants={variants}>
-          <h2>Phone</h2>
+          <h2>{t("contact-phone")}</h2>
           <span>(+34) 631 48 71 79</span>
         </motion.div>
       </motion.div>
@@ -106,12 +110,26 @@ const Contact = () => {
           whileInView={{ opacity: 1 }}
           transition={{ delay: 4, duration: 1 }}
         >
-          <input type="text" required placeholder="Name" name="name" />
-          <input type="email" required placeholder="Email" name="email" />
-          <textarea rows={8} placeholder="Message" name="message" />
-          <button>Submit</button>
-          {error && "Error"}
-          {success && "Success"}
+          <input
+            type="text"
+            required
+            placeholder={`${t("contact-input-name")}`}
+            name="name"
+          />
+          <input
+            type="email"
+            required
+            placeholder={`${t("contact-input-email")}`}
+            name="email"
+          />
+          <textarea
+            rows={8}
+            placeholder={`${t("contact-input-message")}`}
+            name="message"
+          />
+          <button>{t("contact-input-submit")}</button>
+          {error && t("contact-input-error")}
+          {success && t("contact-input-success")}
         </motion.form>
       </div>
     </motion.div>

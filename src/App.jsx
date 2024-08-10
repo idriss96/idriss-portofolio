@@ -1,5 +1,5 @@
-import Test from "./Test";
-import "./app.scss";
+import { useTranslation } from "react-i18next";
+
 import StarsCanvas from "./components/starBackground/StarBackground";
 import Contact from "./components/contact/Contact";
 import Cursor from "./components/cursor/Cursor";
@@ -10,7 +10,12 @@ import Portfolio from "./components/portfolio/Portfolio";
 import Services from "./components/services/Services";
 import Skills from "./components/skills/Skills";
 
+import Test from "./Test";
+import "./app.scss";
+
 const App = () => {
+  const { t } = useTranslation();
+
   return (
     <div>
       {/* <Cursor /> */}
@@ -20,7 +25,7 @@ const App = () => {
         <Hero />
       </section>
       <section id="Skills">
-        <Parallax type="Skills" />
+        <Parallax type={`${t("Parallax-skills")}`} />
       </section>
       <section>
         <Skills />
@@ -30,7 +35,7 @@ const App = () => {
       </section> */}
       {/* <Portfolio /> */}
       <section id="Contact">
-        <Parallax type="Contact" />
+        <Parallax type={`${t("Parallax-contact")}`} />
       </section>
       <section>
         <Contact />

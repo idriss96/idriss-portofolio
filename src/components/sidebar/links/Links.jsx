@@ -1,9 +1,16 @@
 import { motion } from "framer-motion";
+import { useTranslation } from "react-i18next";
 
 import { animatedLinks } from "../../../utils/motion.js";
 
 const Links = ({ setOpen }) => {
-  const items = ["Homepage", "Skills", "Contact"];
+  const { t } = useTranslation();
+
+  const items = [
+    t("Parallax-homePage"),
+    t("Parallax-skills"),
+    t("Parallax-contact"),
+  ];
 
   return (
     <motion.div className="links" variants={animatedLinks.variants}>
