@@ -4,6 +4,7 @@ import Sidebar from "../sidebar/Sidebar";
 import { slideInFromLeft, slideInFromRight } from "../../utils/motion.js";
 
 import "./navbar.scss";
+import LanguageSelector from "../LanguageSelector/LanguageSelector.jsx";
 
 const Navbar = () => {
   return (
@@ -12,6 +13,7 @@ const Navbar = () => {
       <div className="wrapper">
         <motion.span variants={slideInFromLeft(0.5)}>Idriss Dev</motion.span>
         <motion.div variants={slideInFromRight(0.5)} className="social">
+          <LanguageSelector />
           <a
             href="https://github.com/idriss96"
             target="_blank"
