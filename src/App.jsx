@@ -40,9 +40,6 @@ const App = () => {
       <section>
         <Contact />
       </section>
-
-      {/* <Test/>
-    <Test/> */}
     </div>
   );
 };
